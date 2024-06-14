@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Items</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #EEEDE7; /* Darker gray background */
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+         .table-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 0px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 60%;
+        }
+
+        .form-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 0px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 40%;
+        }
+
+        .form-section {
+            min-height: 900px; /* Minimum height set to increase form height */
+        }
+
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        .buttons button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            color: white;
+        }
+        .buttons .clear-btn {
+            background-color: #457ceb;
+            width: 25%;
+        }
+        .buttons .save-btn {
+            background-color: #4CAF50;
+            width: 70%;
+        }
+        .table-section {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .table-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .table-actions input {
+            padding: 8px;
+            width: 300px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .table-actions select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="form-section">
+        <h1>Items</h1>
+        <br>
+        <hr> 
+        <br>
+        <div class="form-group">
+            <label for="toolName">Name:</label>
+            <input type="text" id="itemName" name="itemName">
+        </div>
+        <div class="form-group">
+            <label for="toolBrand">Measuring unit:</label>
+            <input type="text" id="measuringUnit" name="measuringUnit">
+        </div>
+        <div class="form-group">
+            <label for="ratePerHour">Cost:</label>
+            <input type="number" id="cost" name="cost" step="0.01">
+        </div>
+        <div class="form-group">
+            <label for="toolDescription">Description:</label>
+            <textarea id="toolDescription" name="toolDescription" rows="4"></textarea>
+        </div>
+        <div class="buttons">
+            <button type="button" class="clear-btn" onclick="clearForm()">Clear</button>
+            <button type="button" class="save-btn" onclick="saveForm()">Save</button>
+        </div>
+    </div>
+
+    <div class="table-section">
+        <h2>List of Items</h2>
+        <div class="table-actions">
+            <!-- <select>
+                <option>Status</option>
+            </select> -->
+            <input type="text" placeholder="Search">
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item ID</th>
+                    <th>Name</th>
+                    <th>Measuring unit</th>
+                    <th>cost</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Empty table body -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    function clearForm() {
+        document.getElementById('itemName').value = '';
+        document.getElementById('itemMeasuringunit').value = '';
+        document.getElementById('itemCost').value = '';
+        document.getElementById('itemDescription').value = '';
+    }
+
+    function saveForm() {
+        // Implement the save functionality here
+        alert('Form saved successfully!');
+    }
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Plan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align items to the top */
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px; /* Reduced padding to bring the form higher */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 1000px;
+            margin-top: 20px; /* Added margin-top to bring the container higher */
+        }
+
+        h1 {
+            text-align: left; /* Align heading to the left */
+            margin-bottom: 20px;
+        }
+
+        hr {
+            margin-bottom: 20px; /* Reduced margin to bring elements closer */
+        }
+
+        .radio-buttons {
+            display: flex;
+            justify-content: flex-start; /* Align items to the start */
+            margin: 20px 0; /* Reduced margin to bring elements closer */
+        }
+
+        .radio-buttons label {
+            margin-right: 20px; /* Space between radio buttons */
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            margin: 20px 0; /* Reduced margin to bring elements closer */
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #bbb;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .new-job-button {
+            display: flex;
+            justify-content: flex-start; /* Align button to the left */
+            margin-top: 20px; /* Reduced margin to bring elements closer */
+        }
+
+        .new-job-button button {
+            padding: 15px 60px; /* Increase the length of the button */
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .new-job-button button:hover {
+            background-color: #0056b3;
+        }
+
+        .job-plan-table .clear-button, .job-plan-table .save-button {
+            flex-grow: 1;
+            margin: 0 5px;
+            padding: 10px;
+            border: none;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .job-plan-table .clear-button:hover, .job-plan-table .save-button:hover {
+            background-color: #dcdcdc;
+        }
+
+        .save-button {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .save-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Job Plan</h1>
+        <hr>
+        <form id="jobPlanForm">
+            <div class="radio-buttons">
+                <label><input type="radio" name="status" value="In progress"> In progress</label>
+                <label><input type="radio" name="status" value="Completed"> Completed</label>
+                <label><input type="radio" name="status" value="Suspended"> Suspended</label>
+                <label><input type="radio" name="status" value="All"> All</label>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="search" placeholder="Search...">
+                <button type="button" onclick="search()">SEARCH</button>
+            </div>
+            <div class="new-job-button">
+                <button type="button" id="newJobButton">New Job</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.getElementById('newJobButton').addEventListener('click', function() {
+            window.location.href = 'New Job.html'; // Adjust the URL as needed
+        });
+
+        function search() {
+            const query = document.getElementById('search').value;
+            alert('Searching for: ' + query);
+        }
+    </script>
+</body>
+</html>

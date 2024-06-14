@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level Entry Form</title>
+    <style>
+        /*Styling for the page*/
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #EEEDE7; /* Darker gray background */
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Styling for the main container holding the form */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Styling for the form section */
+        .form-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 0px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%; /* Adjust the width as needed, e.g., 80% */
+            max-width: 600px; /* Optionally, set a max-width */
+        }
+
+        /* Additional styling for form section to ensure minimum height */
+        .form-section {
+            min-height: 200px; /* Minimum height set to increase form height */
+        }
+
+        /* Styling for form input group */
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Styling for buttons */
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        .buttons button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            color: white;
+        }
+
+        /* Styling for clear button */
+        .buttons .clear-btn {
+            background-color: #457ceb;
+            width: 25%;
+        }
+
+        /* Styling for save button */
+        .buttons .save-btn {
+            background-color: #4CAF50;
+            width: 70%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="form-section">
+        <h1>Level Entry Form</h1>
+        <br>
+        <hr> 
+        <br>
+        <div class="form-group">
+            <label for="levelName">Level Name:</label>
+            <input type="text" id="levelName" name="levelName">
+        </div>
+        <div class="buttons">
+            <button type="button" class="clear-btn" onclick="clearForm()">Clear</button>
+            <button type="button" class="save-btn" onclick="saveForm()">Save</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function clearForm() {
+        document.getElementById('levelName').value = '';
+    }
+
+    function saveForm() {
+        // Implement the save functionality here
+        alert('Form saved successfully!');
+    }
+</script>
+
+</body>
+</html>
+

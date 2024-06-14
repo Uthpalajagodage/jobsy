@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tool Inventory</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #EEEDE7; /* Darker gray background */
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .table-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 0px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 60%;
+        }
+
+        .form-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 0px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+        }
+
+        .form-section {
+            min-height: 900px; /* Minimum height set to increase form height */
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        .buttons button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            color: white;
+        }
+        .buttons .clear-btn {
+            background-color: #457ceb;
+            width: 25%;
+        }
+        .buttons .save-btn {
+            background-color: #4CAF50;
+            width: 70%;
+        }
+        .table-section {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .table-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .table-actions input {
+            padding: 8px;
+            width: 300px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .table-actions select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="form-section">
+        <h1>Tools Inventory</h1>
+        <br>
+        <hr> 
+        <br>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <select id="name" name="name">
+                <option value="tool1">Tool 1</option>
+                <option value="tool2">Tool 2</option>
+                <option value="tool3">Tool 3</option>
+            </select>
+        </div>
+
+        <div class="form-group short-input">
+            <label for="unitPrice">Unit Price</label>
+            <input type="number" id="unitPrice" name="unitPrice" required placeholder="Unit Price">
+        </div>
+
+        <div class="form-group short-input">
+            <label for="quantity">Quantity</label>
+            <input type="number" id="quantity" name="quantity" required placeholder="Quantity">
+        </div>
+
+        <div class="form-group">
+            <label for="supplier">Supplier</label>
+            <select id="supplier" name="supplier">
+                <option value="supplier1">Supplier 1</option>
+                <option value="supplier2">Supplier 2</option>
+                <option value="supplier3">Supplier 3</option>
+            </select>
+        </div>
+
+        <div class="form-group short-input">
+            <label for="purchasedDate">Purchased Date</label>
+            <input type="date" id="purchasedDate" name="purchasedDate" required>
+        </div>
+        <div class="form-group">
+            <label for="brand">Brand</label>
+            <input type="text" id="brand" name="brand" required placeholder="Brand">
+        </div>
+
+        <div class="form-group">
+            <label for="model">Model</label>
+            <input type="text" id="model" name="model" required placeholder="Model">
+        </div>
+        <div class="form-group short-input">
+            <label for="status">Status</label>
+            <select id="status" name="status">
+                <option value="available">Available</option>
+                <option value="unavailable">Unavailable</option>
+                <option value="maintenance">Maintenance</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" placeholder="Description"></textarea>
+        </div>
+
+        <div class="buttons">
+            <button type="button" class="clear-btn" onclick="clearForm()">Clear</button>
+            <button type="button" class="save-btn" onclick="saveForm()">Save</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function clearForm() {
+        document.getElementById('name').value = '';
+        document.getElementById('unitPrice').value = '';
+        document.getElementById('quantity').value = '';
+        document.getElementById('supplier').value = '';
+        document.getElementById('purchasedDate').value = '';
+        document.getElementById('brand').value = '';
+        document.getElementById('model').value = '';
+        document.getElementById('status').value = '';
+        document.getElementById('description').value = '';
+    }
+
+    function saveForm() {
+        // Implement the save functionality here
+        alert('Form saved successfully!');
+    }
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools Inventory Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #EEEDE7;
+            color: #333;
+        }
+        .form-container {
+            width: 70%;
+            height: 700px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-header {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: left;
+            font-weight: bold;
+        }
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+        }
+        .form-group {
+            width: 48%;
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #000;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #495057;
+        }
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #6c757d;
+            opacity: 1;
+        }
+        .form-group textarea {
+            height: 100px;
+        }
+
+        /* Specific width for selected inputs */
+        .form-group.short-input input,
+        .form-group.short-input select {
+            width: 60%; /* Reduced width */
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+        .form-actions button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .form-actions button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-header">Tools Inventory</div>
+        <form id="toolsInventoryForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <select id="name" name="name">
+                        <option value="tool1">Tool 1</option>
+                        <option value="tool2">Tool 2</option>
+                        <option value="tool3">Tool 3</option>
+                    </select>
+                </div>
+                <div class="form-group short-input">
+                    <label for="unitPrice">Unit Price</label>
+                    <input type="number" id="unitPrice" name="unitPrice" required placeholder="Unit Price">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group short-input">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" id="quantity" name="quantity" required placeholder="Quantity">
+                </div>
+                <div class="form-group">
+                    <label for="supplier">Supplier</label>
+                    <select id="supplier" name="supplier">
+                        <option value="supplier1">Supplier 1</option>
+                        <option value="supplier2">Supplier 2</option>
+                        <option value="supplier3">Supplier 3</option>
+                    </select>
+                </div>
+
+                <div class="form-group short-input">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" id="quantity" name="quantity" required placeholder="Quantity">
+                </div>
+                <div class="form-group">
+                    <label for="supplier">Supplier</label>
+                    <select id="supplier" name="supplier">
+                        <option value="supplier1">Supplier 1</option>
+                        <option value="supplier2">Supplier 2</option>
+                        <option value="supplier3">Supplier 3</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group short-input">
+                    <label for="purchasedDate">Purchased Date</label>
+                    <input type="date" id="purchasedDate" name="purchasedDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="brand">Brand</label>
+                    <input type="text" id="brand" name="brand" required placeholder="Brand">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="model">Model</label>
+                    <input type="text" id="model" name="model" required placeholder="Model">
+                </div>
+                <div class="form-group short-input">
+                    <label for="status">Status</label>
+                    <select id="status" name="status">
+                        <option value="available">Available</option>
+                        <option value="unavailable">Unavailable</option>
+                        <option value="maintenance">Maintenance</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" placeholder="Description"></textarea>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="button" onclick="clearForm()">Clear</button>
+                <button type="submit">Save</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        function clearForm() {
+            document.getElementById('toolsInventoryForm').reset();
+        }
+
+        document.getElementById('toolsInventoryForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Form submitted!');
+            // Here you can add your code to handle the form submission
+        });
+    </script>
+</body>
+</html> -->
