@@ -13,26 +13,18 @@
         }
         .container {
             display: flex;
-            justify-content: space-between;
+            justify-content: center; /* Center the form */
             align-items: flex-start;
             gap: 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
-        .table-section {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 0px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 60%;
-        }
-
         .form-section {
             background-color: #ffffff;
             padding: 20px;
             border-radius: 0px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 80%;
+            width: 50%; /* Adjust the width to 50% */
         }
 
         .form-section {
@@ -52,6 +44,9 @@
             box-sizing: border-box;
             border: 1px solid #ccc;
             border-radius: 5px;
+        }
+        .short-input input, .short-input select {
+            width: 48%; /* Adjust the width to 48% for shorter inputs */
         }
         .buttons {
             display: flex;
@@ -201,10 +196,6 @@
 
 </body>
 </html>
-
-
-
-
 
 
 

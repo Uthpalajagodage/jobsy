@@ -7,136 +7,130 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #EEEDE7;
-            color: #333;
-        }
-        .form-container {
-            width: 70%;
-            height: auto;
-            margin: 50px auto;
+            background-color: #EEEDE7; /* Darker gray background */
+            margin: 0;
             padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .form-header {
-            font-size: 24px;
-            margin-bottom: 20px;
-            text-align: left;
-            font-weight: bold;
-        }
-        .form-row {
+        .container {
             display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            justify-content: center; /* Center the form */
+            align-items: flex-start;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
+        .form-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 0px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 50%; /* Adjust the width to 50% */
+        }
+
+        .form-section {
+            min-height: 900px; /* Minimum height set to increase form height */
+        }
+
         .form-group {
-            width: 48%;
             margin-bottom: 15px;
         }
         .form-group label {
             display: block;
             margin-bottom: 5px;
         }
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
+        .form-group input, .form-group textarea, .form-group select {
             width: 100%;
             padding: 10px;
             box-sizing: border-box;
-            border: 1px solid #000;
-            border-radius: 4px;
-            font-size: 14px;
-            color: #495057;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: #6c757d;
-            opacity: 1;
+        .short-input input, .short-input select {
+            width: 48%; /* Adjust the width to 48% for shorter inputs */
         }
-        .form-group textarea {
-            height: 100px;
-        }
-
-        /* Specific width for selected inputs */
-        .form-group.short-input input,
-        .form-group.short-input select {
-            width: 60%; /* Reduced width */
-        }
-
-        .form-actions {
+        .buttons {
             display: flex;
             justify-content: space-between;
         }
-        .form-actions button {
+        .buttons button {
             padding: 10px 20px;
-            border: none;
-            background-color: #007bff;
-            color: white;
-            cursor: pointer;
-            border-radius: 4px;
             font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            color: white;
         }
-        .form-actions button:hover {
-            background-color: #0056b3;
+        .buttons .clear-btn {
+            background-color: #457ceb;
+            width: 25%;
+        }
+        .buttons .save-btn {
+            background-color: #4CAF50;
+            width: 70%;
         }
     </style>
 </head>
 <body>
-    <div class="form-container">
-        <div class="form-header">Consumable Stocks</div>
-        <form id="consumableStocksForm">
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="itemName">Item Name</label>
-                    <select id="itemName" name="itemName">
-                        <option value="paper">Paper</option>
-                        <option value="pens">Pens</option>
-                        <option value="ink">Ink</option>
-                        <!-- Add more options as needed -->
-                    </select>
-                </div>
-                <div class="form-group short-input">
-                    <label for="quantity">Quantity</label>
-                    <input type="number" id="quantity" name="quantity" required placeholder="Quantity">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group short-input">
-                    <label for="unitCost">Unit Cost</label>
-                    <input type="number" id="unitCost" name="unitCost" required placeholder="Unit Cost">
-                </div>
-                <div class="form-group">
-                    <label for="supplier">Supplier</label>
-                    <input type="text" id="supplier" name="supplier" required placeholder="Supplier">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group short-input">
-                    <label for="date">Date</label>
-                    <input type="date" id="date" name="date" required>
-                </div>
-                <div class="form-group">
-                    <label for="description">Description</label>
-                    <textarea id="description" name="description" placeholder="Description"></textarea>
-                </div>
-            </div>
-            <div class="form-actions">
-                <button type="button" onclick="clearForm()">Clear</button>
-                <button type="submit">Save</button>
-            </div>
-        </form>
-    </div>
-    <script>
-        function clearForm() {
-            document.getElementById('consumableStocksForm').reset();
-        }
 
-        document.getElementById('consumableStocksForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            alert('Form submitted!');
-            // Here you can add your code to handle the form submission
-        });
-    </script>
+<div class="container">
+    <div class="form-section">
+        <h1>Consumable Stocks</h1>
+        <br>
+        <hr> 
+        <br>
+        <div class="form-group">
+            <label for="itemName">Item Name</label>
+            <select id="itemName" name="itemName">
+                <option value="paper">Paper</option>
+                <option value="pens">Pens</option>
+                <option value="ink">Ink</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+
+        <div class="form-group short-input">
+            <label for="quantity">Quantity</label>
+            <input type="number" id="quantity" name="quantity" required placeholder="Quantity">
+        </div>
+
+        <div class="form-group short-input">
+            <label for="unitCost">Unit Cost</label>
+            <input type="number" id="unitCost" name="unitCost" required placeholder="Unit Cost">
+        </div>
+
+        <div class="form-group">
+            <label for="supplier">Supplier</label>
+            <input type="text" id="supplier" name="supplier" required placeholder="Supplier">
+        </div>
+
+        <div class="form-group short-input">
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" placeholder="Description"></textarea>
+        </div>
+
+        <div class="buttons">
+            <button type="button" class="clear-btn" onclick="clearForm()">Clear</button>
+            <button type="submit" class="save-btn">Save</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function clearForm() {
+        document.getElementById('consumableStocksForm').reset();
+    }
+
+    document.getElementById('consumableStocksForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Form submitted!');
+        // Here you can add your code to handle the form submission
+    });
+</script>
+
 </body>
 </html>
